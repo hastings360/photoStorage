@@ -1,0 +1,37 @@
+<div class="font-sizer">
+    <div id="login">
+      <app-login>...Loading</app-login>
+    </div>
+  
+    <div class="background">
+      <!--photo preview-->
+      <app-preview-pics [photo]="previewPhoto" [seePhoto]="seePhoto" (closePreview)="closePrev($event)"></app-preview-pics>
+      
+      <h1 class="name">My Groovy picture library</h1>
+        <section class="container search-container">
+          <div class="row">
+            <div class="col-12">
+              <app-search (query)="newPhotoQuery($event)">...Loading</app-search>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 search-results-container">
+                  <app-search-results [photos]="photos" (previewPhoto)="seePreview($event)">...Loading</app-search-results>
+            </div>
+          </div>
+        </section>
+    </div>
+    <div class="message">
+      <span>For full access, please request a login at <a href="https://www.larry-hastings.com/contact" target="_blank">larry-hastings.com</a></span>
+    </div>
+      <h2>Contribute Photos</h2>
+      <section class="container submit-pic">
+          <div class="input-form">
+              <app-input-form (newPicCreated)="newPicCreated($event)">...Loading</app-input-form>
+          </div>    
+      </section>
+
+      
+</div>
+
+

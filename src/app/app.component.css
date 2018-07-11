@@ -1,0 +1,73 @@
+.font-sizer{
+    font-size: 1rem;
+}
+#login{
+    position: absolute;
+    top: 2px;
+    right: 2px;
+}
+.message{
+    text-align: center;
+    color: #000;
+    margin-top: 10px;
+}
+.message a{
+    text-decoration: none;
+    color: #fff;
+    background-color: #4B9CD3;
+    padding: 2px;
+    border-radius: 2px;
+    margin-left: 2px;
+}
+.message a:hover{
+    color: #000;
+}
+.message a:active{
+    background-color: #fff;
+    box-shadow: 0 0 0 2px #4B9CD3;
+}
+.name{
+    text-align: center;
+    font: italic small-caps bold 4em cursive;
+    color: fff;
+}
+.background{
+    background-color: #4B9CD3;
+    height: auto;
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+
+/*search*/
+.search-container{
+    margin-top: 20px;
+}
+
+/*search-results*/
+.search-results-container{
+    padding-left: 2.5em;
+}
+
+/*submit-form*/
+h2{
+    text-align: center;
+    font: italic small-caps bold 3em cursive;
+    color: #4B9CD3;
+    margin-top: 1em;
+}
+.submit-pic{
+    margin-top: 1em;
+    margin-bottom: 4em;
+    border: 2px solid #4B9CD3;
+}
+.input-form{
+    padding: 1em;
+}
+.preview{
+    padding: 2em;
+}
+@media screen and (max-width: 596px){
+    .font-sizer{
+        font-size: 0.8rem;
+    }
+}

@@ -1,0 +1,32 @@
+<div *ngIf="seePhoto" class="pic-container">
+  <div class="preview-contents">
+    <img class="preview-pic img-fluid" [src]="url" alt="Photo preview" />
+    <div class="preview-buttons">
+      <button class="preview-button" (click)="closePrev()">Close</button>
+      <button *ngIf="downloadable" class="preview-button"><a [href]="urlFull" alt="Download image" download>Download</a></button>
+    </div>
+    <table class="details">
+      <tr>
+        <td class="align-top">Name: </td>
+        <td class="align-right">{{photo.imageName}}</td>
+      </tr>
+      <tr>
+        <td class="align-top">Description: </td>
+        <td class="align-right">{{photo.description}}</td>
+      </tr>
+      <tr>
+        <td class="align-top">Contributor: </td>
+        <td class="align-right">{{photo.contributor}}</td>
+      </tr>
+      <tr>
+        <td class="align-top">Location: </td>
+        <td class="align-right">{{photo.location}}</td>
+      </tr>
+      <tr>
+        <td class="align-top">Category: </td>
+        <td class="align-right">{{photo.category}}</td>
+      </tr>
+    </table>
+  </div>
+  
+</div>

@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+		<!-- IE Edge Meta Tag-IE 8 and beyond-Equivalent to html5 doctype -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		
+		<!-- Latest compiled and minified CSS-Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        
+			
+	<base href="/">
+  	<!-- Mobile display adaption-No shrinkage-Breakpoint adaptable -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <style>
+        .loader{
+            position: absolute;
+            left: 50%;
+            margin-left: -45px;
+            margin-top: 300px;
+            animation: rotate 0.6s linear infinite;
+        }
+        @keyframes rotate{
+            0%{
+                transform: rotateY(0deg);
+            }
+            to{
+                transform: rotateY(360deg);
+            }
+        }
+    </style>
+    <app-root>
+        <svg class="loader" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	                width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+              <image overflow="visible" width="100" height="100" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAMAAADVRocKAAAABGdBTUEAALGPC/xhBQAAAAFzUkdC
+              AK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAb9QTFRF
+              pc7ppM7ppM3pps/px+Hx1+n11un11uj11ej1zOPyqNDqzeTzwN3wttftwd3wyuLy4e/36vP69vr9
+              /v///////P3+7/b75PD40OXzqdDq0ub05vH57vb7+Pv9+fz+7PX64u/4w97wt9jt3u336fP59fr8
+              6PL5xd/wstXs+vz9/f7/vdvvrNLrp8/pq9Hqtdbt1ej0+fz9qtHqps7p+vz+8ff7yeLysdTsqM/q
+              3+332+v25/L5xuDx3Oz2vNru0+f0r9Pr2Or1zuTz9/r9+/3+vdvu9/v9rdLr8Pb75fH46PP5udnu
+              0ebz9Pn8utnuyeHxwd3v/f7+x+DxwN3v3ez28Pf7rtPrtdft4e738vj8sNTr3+736fP6qtDqu9ru
+              y+Pyv9zvzeTyuNjtyOHx7fX68/j82uv2p8/qtNbswNzv/v7/vNvuxd/x1Of0tNbt1Oj09fn8xt/x
+              zePyvtzv7PT64u/3rNLq6/T64O73y+Lywt7ws9bsxN7ws9Xsr9Tr2er1vtvvxN/wwt3w2On1sNTs
+              t9ft+fv9/P7+yeHy2er2z+Xz5fD44/D49fr9o83p0ubz0eXz3e33sdXs4e/44e74dunCngAAAAFi
+              S0dEFJLfyTUAAAAJcEhZcwAACxMAAAsTAQCanBgAAASUSURBVGje7VjtXxNHEL7d9IicRWxymAQS
+              OV4SU/MCyQWIBEPEFAqIbbQJJvWtiBRorZbSEkpbsfWlVfti0z+4sLMnSfZm+ezvd883Ms/s7M7O
+              PjOHojhw4MCBAwcOHLx7IFSADUskEcxEWj1d76kd7hNN6FA7NWF97aTacaKV9T7fX5e7xd+tnmoL
+              0H36A49Xf4ueMz6/GCDQ2xcMHZH0s/3GAA8wODTsOTJ4w5FzonfU/yG3nzdicZdtJhPJkdEezkqp
+              g2mz6XjR3gy3jI1PZO0S7LrACZNpqmCggRxff0ppZVHzIlg8+fYbsBjTQAgWiILDHAKWKvqfBMsl
+              zJV0AGGGStZXsj5GutwlsMgosxQ/wvxdpxlhtksWgMx9zFjzYg3w0MG5Y1wXArID0MWzjHVFPMDE
+              ErNcRF2vQhWMEmmATyAPMSEA/bTESvQalgDaCU/guvQKzM8Yq1wRt+GGDC9j/okbjFCtSU8wd4ax
+              PhffSfomswzfwq6gUGUEIyHN0G3I4x0xQ12zzOJGXe/CE/1CmiE6A69sRQxwj0lN6RTmT+CZZRal
+              ARIGY60mBQu/nKUJLMNcAlbjsvVJ7T5jrYkWfjm+LzHXdQ/i2pKHDZbHzSkxQ18Vmb8fLdKpTeb6
+              tTRD5AHI2TdiAD+8jzzqPwmu69IiDUQYKyI+dm0efR+A+Coj5KQ6YeXxobAKjT5iliETcbV0Ylqu
+              E9+yPJYGElobEufOM/9u9Aq2QCe+k16BsgYdbzsnAF5paBDVie+h2Ul7jfLDqi7HThLxJDXYQd0l
+              W58upuAxhgRkjmlmvL71XblOgN6mfozutSGqQu5+QnXiASYxzXDVuU4I85cJShz+GdWJiDyFsIvC
+              GKYTv0CG+zTElY5cZoTHsvUVuo/qBFfiXuwA9BqT2s0ncp3ohXliRGzH08cVOejEo6i0SLka2LQs
+              rsR4kceD2CjSvE2uBmLLIntheZFbOnFFXqQDTA1Kv4pX8IQpiN6J6sSMdCSzzv0btCybPD6GIkeb
+              Ie+DiNQmapC59A6Wx+S2vBmSp9AHh2xTSGPljcOd0WchJI905TmzTKLJvf6CEcZtT6gZITas0t+h
+              FPfFAN068j6sE8BUHHpm+1m20QPvk4/tNqXIvys861iAwDDoRNoueHwBxnlrarghzGWkUsb6KN/j
+              Moxkf9ha/d7nTAFpHqaGLXSeeHiMTnjv2ZyQbszyl0tfQiu4is0TL9ChmY9kxdsigexXLQXjOhEU
+              S1F7xSz3nyInsFKYEXoBDeweSECGBaYjME9cEKYGy4JL9UAJqqy76fOcHHz5a7HXh5btZFOG9Evi
+              NkFj9Tq2/i0fb9h/+lcKaS2bzWqBZCWa35oHgRo9ZP21V+bLmK0RCI3xD/CcZlvlZkEtWSOBNzXW
+              P5zLLdzc6S+Hi/zH4sHDotlF/nGsh3YriaNz0kTtzpJF/HtCa/tyPkj/P/Vq0z8Q7BCco8vuvtTb
+              vzerPtUaL++qr5eO3L3hyJuZ1p5L/n1jNOpSNHZNmm8Y/zX9YjSsUh03WtwbDWOtIm1ZDhw4cODA
+              gQMHDt5N/A9YKftW+72diwAAABl0RVh0Q29tbWVudABDcmVhdGVkIHdpdGggR0lNUFeBDhcAAAAl
+              dEVYdGRhdGU6Y3JlYXRlADIwMTctMTItMDNUMTU6MDU6MTYtMDU6MDAPT1dgAAAAJXRFWHRkYXRl
+              Om1vZGlmeQAyMDE3LTEyLTAzVDE1OjA1OjE2LTA1OjAwfhLv3AAAAABJRU5ErkJggg==">
+              </image>
+          </svg>
+    </app-root>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Masonry.js -->
+    <!--<script src="/node_modules/masonry-layout/dist/masonry.pkgd.min.js"></script>-->
+    <!--<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>-->
+   
+</body>
+</html>

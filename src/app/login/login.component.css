@@ -1,0 +1,62 @@
+#login-container{
+    position: absolute;
+    top: 1px;
+    right: 5px;
+    z-index: 1000;
+    width: 300px;
+    text-align: right;
+}
+#login-message{
+    color: #84fa97;
+}
+#login-error-message{
+    color: #e7a8a8;
+}
+.login-btn{
+    background-color: #00000099;
+    color: #ffffff;
+}
+.login-btn:hover{
+    color: #a6a6a6;
+    border-color: #a6a6a6;
+    cursor: pointer;
+}
+#login-popout{
+    background-color: #00000099;
+    border: 1px solid #ffffff;
+    padding: 10px;
+}
+#login-popout label{
+    color: #ffffff;
+}
+#login-popout button{
+    background-color: #00000099;
+    color: #ffffff;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+#login-popout button:hover{
+    cursor: pointer;
+}
+.spinner{
+    float: left;
+    margin-top: 5px;
+}
+.error-message{
+    color: #f30707;
+    font-size: 0.7em;
+}
+.spin{
+    animation: rotate 0.6s linear infinite;
+}
+.no-spin{
+    animation: none;
+}
+@keyframes rotate{
+    0%{
+        transform: rotateY(0deg);
+    }
+    to{
+        transform: rotateY(360deg);
+    }
+}

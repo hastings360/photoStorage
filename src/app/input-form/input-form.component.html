@@ -1,0 +1,61 @@
+<div class="row img-form-container">
+
+  <div class="col-md-6" id="input-form">
+    <form #imageform>
+      <input id="image" type="file" #file (change)="updateImageFile(file.files)" accept=".jpg, .jpeg, .png, .tiff, .gif, .bmp">
+      <div class="error-message" *ngIf="!imageUploaded">Please choose an image</div>
+    </form>
+    <hr class="small-divider">
+    <!--automatically populated-->
+    <p>Contribution Date: <span id="date">{{currentDate | date:"MM/dd/yyyy"}}</span></p>
+    <form   
+          [formGroup]="inputForm" 
+          (ngSubmit)="onSubmit(inputForm.value)">
+
+          <div class="form-group">                
+            <label for="imageName">Image Name:</label>
+            <input id="imageName" type="text" class="form-control" [formControl]="inputForm.controls['imageName']" [class.error]="!inputForm.controls['imageName'].valid">
+            <div class="error-message" *ngIf="!inputForm.controls['imageName'].valid">Image name (no spaces, no capitalization)</div>
+            
+            <label for="description">Description:</label>
+            <input type="text" class="form-control" [formControl]="inputForm.controls['description']" [class.error]="!inputForm.controls['description'].valid">
+            <div class="error-message" *ngIf="!inputForm.controls['description'].valid">Brief description of image</div>
+            
+            <label for="contributor">Contributor:</label>
+            <input id="contributor" type="text" class="form-control" [formControl]="inputForm.controls['contributor']" [class.error]="!inputForm.controls['contributor'].valid">
+            <div class="error-message" *ngIf="!inputForm.controls['contributor'].valid">Your name</div>
+            
+            <label for="location">Location:</label>
+            <input id="location" type="text" class="form-control" [formControl]="inputForm.controls['location']" [class.error]="!inputForm.controls['location'].valid">
+            <div class="error-message" *ngIf="!inputForm.controls['location'].valid">Where photo was taken</div>
+            
+            <label for="category">Category:</label>
+            <input id="category" type="text" class="form-control" [formControl]="inputForm.controls['category']" [class.error]="!inputForm.controls['category'].valid">
+            <div class="error-message" *ngIf="!inputForm.controls['category'].valid">Category (ie: landscape, portrait, macro, etc...)</div>
+          </div>
+
+          <div *ngIf="inputForm.valid && imageUploaded">
+            <button type="submit" id="contribute-submit" class="btn" ><strong>Send</strong></button>
+          </div>
+    </form>
+  </div>
+
+  <div id="img-upload-container" class="col-md-6">
+    <img class="img-fluid" id="uploaded" src="#" alt="Your image previews here">
+    <div class="error-message" *ngIf="imageToLarge">That image is too large!<br>Limit: 2 Gb</div>
+  </div>
+
+  <div *ngIf="received" class="status-message">
+    <p>The photo has been submitted <br>
+      without any recorded errors</p>
+    <button (click)="clearMessageAndForm()">Submit more photos</button>
+  </div>
+  
+  <div *ngIf="error" id="error-message" class="status-message">
+    <p>There was an issue submitting your photo<br>
+      Contact administrator for help</p>
+    <button (click)="clearErrorMessage()">Try again</button>
+  </div>
+</div>
+
+

@@ -1,0 +1,12 @@
+#search-input{
+    border: solid 1px #ffffff;
+    border-radius: 1em;
+    width: 80%;
+    background-color: #4B9CD3;
+    padding: 0.5em;
+    font-size: 1.5em;
+    margin-bottom: 2em;
+    margin-left: 10%;
+    outline: none;
+    user-select: none;
+}
