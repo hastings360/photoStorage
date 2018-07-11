@@ -1,15 +1,16 @@
+//DB login
+//image storage location
+//create database in production mongo, use stronger username and password
+
+
 const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 const MongoClient = require('mongodb').MongoClient;//db API
 const url = "mongodb://localhost:27017";//db connection string
-const fs = require('fs');
-const rxjs = require('rxjs');
 
 //tokenizing
 const jwt = require('jsonwebtoken');
-//const cert = fs.readFileSync(__dirname + '/../test-secret/jsonWebCert','utf8');
-//const publicCert = fs.readFileSync(__dirname + '/../test-secret/jsonWebCert.pub','utf8');
 
 //login model
 const Login = require('../models/login');
@@ -23,28 +24,6 @@ const storage = multer.diskStorage({
 })
 const upload = multer({ storage: storage});
 const sharp = require('sharp');
-
-//const nodemailer = require('nodemailer');//mail API
-//const ObjectId = require('mongodb').ObjectId;
-//let data;//db API
-
-/*root API
-router.get('/', (req, res) => {
-  res.send('photoStorage api works');
-});*/
-
-//Adds mini-photo to photo objects outgoing--Not needed?????
-/*function addMinis(x){
-  try{
-    for(let y in x){
-      x[y].image = fs.readFileSync("./temp-photos/temp-icons/mini-" + x[y].imageName).toString('base64'); //Need Base64?????????
-    }
-  }catch(err){
-    console.log("Error adding photos for" + x[y].imageName);
-    return res.sendStatus(500);
-  }
-  return x;
-}*/
 
 //client browser token verification
 router.post('/token-verify', (req, res) => { 
@@ -77,7 +56,6 @@ router.post('/token-verify', (req, res) => {
 //login credentials verfiication
 router.post('/login-submit', (req, res) => { 
     let login = new Login(req.body);
-    let currentDate = Date.now();
     MongoClient.connect(url)
     .then(client =>{
       const db = client.db('photoStorage');
@@ -147,54 +125,5 @@ router.get('/photo-search30', (req, res) =>{
   })
   .catch(error => {console.log(error);return res.sendStatus(500);});
 });
-/*
-//mail API
-router.post('/recipe-mail', upload.single('image'),(req, res) =>{
-  res.send('recipe-mail api works');
-  console.log('recipe-mail accessed');
-  
-  let mailData = JSON.parse(req.body.data);//form data: transforms JSON string back to object
-  let imageFile = req.file;//attachment file
-  
-  SendMyMail(mailData,imageFile);
-});
-              //reusable transporter object for mail
-              const transporter = nodemailer.createTransport({
-                service: 'Gmail',
-                auth: {
-                  user: 'hastingsserve@gmail.com',
-                  pass: '577061Ha!'
-                }
-              });
-              //send mail using the object passed in
-              function SendMyMail(data,file){
-                //iterates through contents and assigns string value to contents variable
-                let contents;
-                for(let y in data){
-                  contents += ("<p>" + data[y] + "</p>");
-                };
-                //email data
-                let mailOptions;  //code sets value according to attachment being present or not
-                if(file == undefined){
-                  mailOptions = {
-                    to: 'hastings360@gmail.com', 
-                    html: "<h1>Lulu's Recipe Message</h1>" + contents
-                    };
-                  }else{
-                    mailOptions = {
-                      to: 'hastings360@gmail.com', 
-                      html: "<h1>Lulu's Recipe Message</h1>" + contents,
-                      attachments: [{filename: file.originalname,path: file.path}]
-                    };
-                  }
-                //sends
-                transporter.sendMail(mailOptions,(error,info) =>{
-                  if(error){
-                    return console.log(error);
-                  }else{
-                    console.log('Email Sent');
-                  }
-                });
-              }
-*/     
+
 module.exports = router;
