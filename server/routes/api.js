@@ -83,7 +83,7 @@ router.post('/submit-pic', upload.single('image'), (req, res) =>{
     sharp('./temp-photos/' + JSON.parse(req.body.formInputData).imageName).resize(600).toFile('./temp-photos/previews/med-' + JSON.parse
     (req.body.formInputData).imageName).catch(error => {console.log("med shrink error"); return res.sendStatus(500);});
     //saves file as compressed mini version
-    sharp('./temp-photos/' + JSON.parse(req.body.formInputData).imageName).resize(200).toFile('./temp-photos/temp-icons/mini-' + JSON.parse
+    sharp('./temp-photos/' + JSON.parse(req.body.formInputData).imageName).resize(200).toFile('./temp-photos/icons/mini-' + JSON.parse
     (req.body.formInputData).imageName).catch(error => {console.log("mini shrink error"); return res.sendStatus(500);})
     .then(()=>{
               MongoClient.connect(url)
@@ -93,7 +93,7 @@ router.post('/submit-pic', upload.single('image'), (req, res) =>{
                   .then(result =>{  
                             client.close(); return res.send(req.body.formInputData.imageName + " photo info added to database");})
                   .catch(error =>{
-                            client.close(); console.log("coollection connect error"); return res.sendStatus(500);});
+                            client.close(); console.log("collection connect error"); return res.sendStatus(500);});
               })
               .catch(error => {
                   console.log("mongo connect error");return res.sendStatus(500);
