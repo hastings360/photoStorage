@@ -58,7 +58,7 @@ export class DbTalkerService {
         };
       })
       .catch(error => {
-        console.log(error + " tokenVerify() on dbTalker");
+        console.log(error + " -No token: tokenVerify() on dbTalker");
         return false;
       });
   }

@@ -19,7 +19,7 @@ export class MiniPicsComponent implements OnInit {
   constructor(private sanitizer: DomSanitizer) { }
 
   ngOnInit() {
-    this.url = this.sanitizer.bypassSecurityTrustResourceUrl('http://localhost:3000/temp-icons/mini-' + this.photo.imageName);
+    this.url = this.sanitizer.bypassSecurityTrustResourceUrl('http://localhost:3060/temp-icons/mini-' + this.photo.imageName);
   }
 
   sendPreview(x){

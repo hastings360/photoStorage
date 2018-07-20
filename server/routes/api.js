@@ -7,7 +7,7 @@ const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 const MongoClient = require('mongodb').MongoClient;//db API
-const url = "mongodb://localhost:27017";//db connection string
+const url = "mongodb://photo:photo-Storage@localhost:27017/photoStorage";//db connection string
 
 //tokenizing
 const jwt = require('jsonwebtoken');
