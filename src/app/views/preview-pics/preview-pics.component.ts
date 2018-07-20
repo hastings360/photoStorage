@@ -25,8 +25,8 @@ export class PreviewPicsComponent implements OnChanges {
   constructor(private sanitizer: DomSanitizer,private dbTalker: DbTalkerService) { }
 
   ngOnChanges() {
-    this.url = this.sanitizer.bypassSecurityTrustResourceUrl('http://localhost:3060/previews/med-' + this.photo.imageName);
-    this.urlFull = this.sanitizer.bypassSecurityTrustResourceUrl('http://localhost:3060/' + this.photo.imageName);
+    this.url = this.sanitizer.bypassSecurityTrustResourceUrl('https://photos.larry-hastings.com/previews/med-' + this.photo.imageName);
+    this.urlFull = this.sanitizer.bypassSecurityTrustResourceUrl('https://photos.larry-hastings.com/' + this.photo.imageName);
     this.dbTalker.tokenVerify(localStorage.getItem('token'))
       .then(results =>{
         if(results.answer === "yes"){
