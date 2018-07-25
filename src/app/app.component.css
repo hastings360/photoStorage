@@ -1,5 +1,7 @@
 .font-sizer{
     font-size: 1rem;
+    background: #fff url("./../assets/imgs/curacao-graffiti.jpg") center/100% 100% no-repeat fixed;
+    padding-bottom: 4em;
 }
 #login{
     position: absolute;
@@ -8,7 +10,7 @@
 }
 .message{
     text-align: center;
-    color: #000;
+    color: #fff;
     margin-top: 10px;
 }
 .message a{
@@ -57,8 +59,8 @@ h2{
 }
 .submit-pic{
     margin-top: 1em;
-    margin-bottom: 4em;
     border: 2px solid #4B9CD3;
+    background-color: #fff;
 }
 .input-form{
     padding: 1em;
