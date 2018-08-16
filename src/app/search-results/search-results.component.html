@@ -4,7 +4,7 @@
 <div *ngIf="databaseError" class="error"><p>No Database connection available</p>
 </div>
 <div>
-    <div class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": ".grid-sizer", percentPosition: true", "horizontalOrder": true}'>
+    <div class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": ".grid-sizer", "horizontalOrder": true}'>
         <app-mini-pics *ngFor='let photo of photos | async' class='pics grid-item'
          [photo]='photo' (previewPhoto)='sendPreview($event)'>...Loading</app-mini-pics>
     </div>
