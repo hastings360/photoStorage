@@ -25,12 +25,12 @@
     float: left;
 }
 .grid-item, .grid-sizer{
-    width: 10%;
+    width: 15%;
 }
 
 @media screen and (max-width: 767px){
     .grid-item, .grid-sizer{
-        width: 15%;
+        width: 20%;
     }
 }
 @media screen and (max-width: 575px){
