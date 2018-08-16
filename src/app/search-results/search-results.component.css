@@ -24,17 +24,17 @@
 /*.grid-item{
     float: left;
 }*/
-.grid-sizer{
+.grid-item, .grid-sizer{
     width: 10%;
 }
 
 @media screen and (max-width: 767px){
-    .grid-sizer{
+    .grid-item, .grid-sizer{
         width: 15%;
     }
 }
 @media screen and (max-width: 575px){
-    .grid-sizer{
+    .grid-item, .grid-sizer{
         width: 50%;
     }
 }
