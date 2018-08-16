@@ -22,8 +22,8 @@
     /*float: left;
 }*/
 .grid-item{
-    float: left;
-    width: 20%;
+    float: right;
+    width: 15%;
 }
 
 /*@media screen and (max-width: 793px){
