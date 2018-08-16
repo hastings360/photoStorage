@@ -2,7 +2,7 @@
     position: relative;
 }
 .img-holder:hover{
-   box-shadow: 0 0 2em 2em #7c7575;
+   border: 1px solid #7c7575;
    cursor: pointer;
    z-index: 999;
 }

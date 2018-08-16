@@ -33,12 +33,10 @@
 @media screen and (max-width: 767px){
     .grid{
         column-count: 3;
-        column-gap: 0;
     }
 }
 @media screen and (max-width: 575px){
     .grid{
         column-count: 2;
-        column-gap: 0;
     }
 }
