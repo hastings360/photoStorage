@@ -21,8 +21,14 @@
     /*margin-bottom: 10px;*/
     /*float: left;
 }*/
+.grid{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
 .grid-item{
-    float: left;
+    display: flex;
+    flex: 1 1 auto;
     width: 15%;
 }
 

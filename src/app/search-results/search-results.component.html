@@ -5,7 +5,7 @@
 </div>
 <div>
     <div class="grid">
-        <app-mini-pics *ngFor='let photo of photos | async' class='pics grid-item'
+        <app-mini-pics *ngFor='let photo of photos | async' class='grid-item'
          [photo]='photo' (previewPhoto)='sendPreview($event)'>...Loading</app-mini-pics>
     </div>
 </div>
