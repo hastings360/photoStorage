@@ -2,7 +2,7 @@
   <div class="preview-contents">
     <img class="preview-pic img-fluid" [src]="url" alt="Photo preview" />
     <div class="preview-buttons">
-      <button class="preview-button" (click)="closePrev()">Close </button>
+      <button class="preview-button" (click)="closePrev()">Close</button>
       <button *ngIf="downloadable" class="preview-button"><a [href]="urlFull" alt="Download image" download>Download</a></button>
     </div>
     <table class="details">
