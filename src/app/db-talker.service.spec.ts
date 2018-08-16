@@ -1,4 +1,4 @@
-import { TestBed, inject } from '@angular/core/testing';
+import { TestBed, inject, fakeAsync, tick} from '@angular/core/testing';
 
 import { DbTalkerService } from './db-talker.service';
 
