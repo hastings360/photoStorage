@@ -22,17 +22,17 @@
     /*float: left;
 }*/
 .grid-item{
-    float: right;
+    float: left;
     width: 15%;
 }
 
-/*@media screen and (max-width: 793px){
+@media screen and (max-width: 767px){
     .grid-item{
-        width: 33.33333%;
+        width: 20%;
     }
 }
 @media screen and (max-width: 575px){
     .grid-item{
         width: 50%;
     }
-}*/
+}
