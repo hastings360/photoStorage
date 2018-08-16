@@ -21,9 +21,9 @@
     /*margin-bottom: 10px;*/
     /*float: left;
 }*/
-/*.grid-item{
+.grid-item{
     float: left;
-}*/
+}
 .grid-item, .grid-sizer{
     width: 10%;
 }
