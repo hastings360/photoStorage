@@ -3,8 +3,10 @@
 </div>
 <div *ngIf="databaseError" class="error"><p>No Database connection available</p>
 </div>
-<div class="row grid">
-    <app-mini-pics *ngFor='let photo of photos | async' class='pics grid-item'
+<div class="row">
+    <div class="grid">
+        <app-mini-pics *ngFor='let photo of photos | async' class='pics grid-item'
          [photo]='photo' (previewPhoto)='sendPreview($event)'>...Loading</app-mini-pics>
+    </div>
 </div>
 
