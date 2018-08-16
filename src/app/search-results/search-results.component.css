@@ -23,16 +23,18 @@
 }*/
 .grid-item{
     float: left;
+}
+.grid-sizer{
     width: 15%;
 }
 
 @media screen and (max-width: 767px){
-    .grid-item{
+    .grid-sizer{
         width: 20%;
     }
 }
 @media screen and (max-width: 575px){
-    .grid-item{
+    .grid-sizer{
         width: 50%;
     }
 }
