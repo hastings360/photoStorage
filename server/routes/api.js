@@ -115,7 +115,7 @@ router.get('/latest-photos', (req, res) =>{
 
 //search photos API - search for specific photo - limit of 30
 router.get('/photo-search30', (req, res) =>{ 
-  let regexSearch = "/.*" + req.query.searchText + ".*/";
+let regexSearch = new RegExp(/\.*${req.query.searchText}\.*/,'gim');
   MongoClient.connect(url)
   .then(client =>{
     const db = client.db('photoStorage');
