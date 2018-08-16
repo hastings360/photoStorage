@@ -31,12 +31,14 @@
 }
 
 @media screen and (max-width: 767px){
-    .grid-item{
-        width: 20%;
+    .grid{
+        column-count: 3;
+        column-gap: 0;
     }
 }
 @media screen and (max-width: 575px){
-    .grid-item{
-        width: 50%;
+    .grid{
+        column-count: 2;
+        column-gap: 0;
     }
 }
