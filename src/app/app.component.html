@@ -1,12 +1,11 @@
-<div class="font-sizer">
+<!--photo preview-->
+<app-preview-pics *ngIf="hideMain" [photo]="previewPhoto" [seePhoto]="seePhoto" (closePreview)="closePrev($event)"></app-preview-pics>
+<div class="font-sizer" *ngIf="!hideMain" >
     <div id="login">
       <app-login>...Loading</app-login>
     </div>
   
-    <div class="background">
-      <!--photo preview-->
-      <app-preview-pics [photo]="previewPhoto" [seePhoto]="seePhoto" (closePreview)="closePrev($event)"></app-preview-pics>
-      
+    <div class="background">      
       <h1 class="name">My Groovy picture library</h1>
         <section class="container search-container">
           <div class="row">
