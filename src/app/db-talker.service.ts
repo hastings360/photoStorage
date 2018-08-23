@@ -1,21 +1,22 @@
+
+import {catchError, map} from 'rxjs/operators';
 import { Http,Response,RequestOptions,URLSearchParams } from '@angular/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import "rxjs/Rx";
+import { throwError } from 'rxjs';
 
-import { PhotoStr } from './photo-str.model';
+throwError
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class DbTalkerService {
-
 
   constructor(public http:Http) { }
 
   loadRecent30(): any{
-    return this.http.get('/api/latest-photos')
-      .map(res => res.json())
-      .catch(error => {console.log(error); return error});
+    return this.http.get('/api/latest-photos').pipe(
+      map(res => res.json()),
+      catchError(error => {console.log(error); return throwError(error)}));
   }
 
   loadSearch30(query:string): any{
@@ -25,9 +26,9 @@ export class DbTalkerService {
     let requestOptions = new RequestOptions();
       requestOptions.search = params;
       
-    return this.http.get('/api/photo-search30', requestOptions)
-      .map(res => res.json())
-      .catch(error => {console.log(error); return error});
+    return this.http.get('/api/photo-search30', requestOptions).pipe(
+      map(res => res.json()),
+      catchError(error => {console.log(error); return throwError(error)}));
   }
 
   //Submit dataObject to API

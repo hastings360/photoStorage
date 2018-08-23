@@ -1,14 +1,8 @@
+
+import {timer as observableTimer} from 'rxjs';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DbTalkerService } from './../db-talker.service';
 import { Component, OnInit } from '@angular/core';
-//import 'rxjs/add/observable/fromEvent';
-import 'rxjs/add/operator/map';
-import { Time } from '@angular/common';
-//import 'rxjs/add/operator/filter';
-//import 'rxjs/add/operator/debounceTime';
-//import 'rxjs/add/operator/do';
-//import 'rxjs/add/operator/switch';
-import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-login',
@@ -104,7 +98,7 @@ export class LoginComponent implements OnInit {
 
   countdown():void{
     
-      let timer = Observable.timer(1000,1000).subscribe(
+      let timer = observableTimer(1000,1000).subscribe(
         count =>{
 
           this.timeLeft.minutes = Math.floor(this.milliSecondsLeft/60000).toString();        

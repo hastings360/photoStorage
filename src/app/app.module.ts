@@ -1,4 +1,3 @@
-import { DbTalkerService } from './db-talker.service';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -28,7 +27,7 @@ import { LoginComponent } from './login/login.component';
     FormsModule, ReactiveFormsModule,
     HttpModule
   ],
-  providers: [DbTalkerService,PhotoStr],
+  providers: [PhotoStr],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

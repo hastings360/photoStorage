@@ -1,5 +1,5 @@
 import { Component, OnChanges, Input, Output, EventEmitter} from '@angular/core';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { BehaviorSubject } from 'rxjs';
 
 import { PhotoStr } from '../photo-str.model';
 

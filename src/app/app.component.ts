@@ -1,6 +1,6 @@
 import { Component} from '@angular/core';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import 'rxjs/add/operator/map';
+import { BehaviorSubject } from 'rxjs';
+
 
 import { DbTalkerService } from './db-talker.service';
 import { PhotoStr } from './photo-str.model';
