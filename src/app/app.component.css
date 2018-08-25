@@ -33,6 +33,18 @@
     font: italic small-caps bold 4em cursive;
     color: fff;
 }
+.color-1{
+    color: #FF9797;
+}
+.color-2{
+    color: #03F3AB;
+}
+.color-3{
+    color: #BBBBFF;
+}
+.color-4{
+    color: #EDEF85;
+}
 .background{
     background-color: #4B9CD3;
     height: auto;
