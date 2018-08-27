@@ -32,8 +32,9 @@ npm-debug.log
 testem.log
 /typings
 /temp-photos
-server
+/server
 server.js
+/temp
 
 # e2e
 /e2e/*.js
