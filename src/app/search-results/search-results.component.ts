@@ -14,12 +14,10 @@ export class SearchResultsComponent implements OnChanges {
 
   @Output() previewPhoto: EventEmitter<PhotoStr> = new EventEmitter<PhotoStr>();
 
-  public noResults: boolean = false;
-  public databaseError: boolean = false;
+  public noResults = false;
+  public databaseError = false;
 
-  constructor() {
-    
-  }
+  constructor() {}
 
   /*AfterViewInit(){
     let container = document.querySelector('.grid');
@@ -30,27 +28,23 @@ export class SearchResultsComponent implements OnChanges {
     })
   }*/
 
-  
-
-  ngOnChanges(){
+  ngOnChanges() {
     this.photos.subscribe(
       (photoArray) => {
-            if(photoArray.length < 1 ){
+            if (photoArray.length < 1 ) {
               this.noResults = true;
-            }
-            else{
+            }else {
               this.noResults = false;
             }
       },
       (error) => {
             console.log(error);
-            console.log("Error getting photo length on search-results-component");
+            console.log('Error getting photo length on search-results-component');
             this.databaseError = true;
-      })
+      });
   }
 
-  sendPreview(x){
+  sendPreview(x) {
     this.previewPhoto.emit(x);
   }
-
 }

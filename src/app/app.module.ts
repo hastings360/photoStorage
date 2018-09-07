@@ -1,7 +1,11 @@
-import { HttpModule } from '@angular/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { DbTalkerService } from './db-talker.service';
+import { CacheRequestService } from './cache-request.service';
+import { HttpInterceptorService } from './http-interceptor.service';
 
 import { AppComponent } from './app.component';
 import { InputFormComponent } from './input-form/input-form.component';
@@ -25,9 +29,9 @@ import { LoginComponent } from './login/login.component';
   imports: [
     BrowserModule,
     FormsModule, ReactiveFormsModule,
-    HttpModule
+    HttpClientModule
   ],
-  providers: [PhotoStr],
+  providers: [PhotoStr, DbTalkerService, {provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true}, CacheRequestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
