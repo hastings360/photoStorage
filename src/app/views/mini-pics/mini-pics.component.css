@@ -13,8 +13,8 @@
     position: absolute;
     background-color: #00000099;
     visibility: hidden;
-    top: 5px;
-    left: 5px;
+    top: 3px;
+    left: 3px;
     color: #ffffff;
     font-size: 0.8em;
     border-radius: 5px;
@@ -29,10 +29,10 @@
 }
 .photo-deets{
     color: #ffffff;
-    font-size: 0.7em;
+    font-size: 0.6em;
     background-color: #00000090;
     z-index: 1;
-    position: absolute; left:0; bottom:0;
+    position: absolute; right:0; bottom:0;
     margin: 0;
     padding: 0 0.3em 0.3em 0.3em;
 }

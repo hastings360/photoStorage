@@ -31,7 +31,7 @@ import { LoginComponent } from './login/login.component';
     FormsModule, ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [PhotoStr, DbTalkerService],
+  providers: [PhotoStr, DbTalkerService, {provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true}, CacheRequestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
