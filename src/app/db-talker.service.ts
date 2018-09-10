@@ -22,8 +22,8 @@ export class DbTalkerService {
   }
 
   // Submit dataObject to API
-  submitPhotoToDb(objectToSend: object): Promise<any> {
-    return this.http.post('/api/submit-pic', objectToSend).toPromise();
+  submitPhotoToDb(objectToSend: object): any {
+    return this.http.post('/api/submit-pic', objectToSend);
   }
 
   // Submit login request
