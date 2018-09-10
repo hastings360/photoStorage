@@ -1,8 +1,5 @@
-import { DateFormatter } from '@angular/common/src/pipes/deprecated/intl';
-import { Event } from '@angular/router';
-import { Http, Response } from '@angular/http';
-import { Component, OnInit, Output, Input, ViewChild, EventEmitter} from '@angular/core';
-import { FormBuilder, FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
+import { Component, OnInit, Output, ViewChild, EventEmitter} from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DbTalkerService } from '../db-talker.service';
 
 @Component({
@@ -12,6 +9,9 @@ import { DbTalkerService } from '../db-talker.service';
 })
 export class InputFormComponent implements OnInit {
 
+  // Message handling
+  @ViewChild('imageform') imageForm;
+
   public inputForm: FormGroup;
   public currentDate = new Date();
   public error = false;
@@ -19,7 +19,7 @@ export class InputFormComponent implements OnInit {
   public imageUploaded = false;
   public imageToLarge = false;
   public imageToApi;
-  
+
   @Output() newPicCreated: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor(fb: FormBuilder, private dbTalker: DbTalkerService) {
@@ -36,31 +36,32 @@ export class InputFormComponent implements OnInit {
   }
 
   onSubmit(x: FormGroup): void {
-            
+
     this.dbTalker.tokenVerify(localStorage.getItem('token'))
-      .then(results =>{
-        if(results.answer === "yes"){
-            let apiObject = new FormData();
-            let timeStamp = Date.now();
-            
-            const todaysDate = this.currentDate.getMonth()+1 + "/" + this.currentDate.getDate() + "/" + this.currentDate.getFullYear(); //Gets date in correct format
-            let formDataObject = JSON.parse(JSON.stringify(x)); //Convert FormGroup to regular object
-            formDataObject.date = todaysDate; //Set date to todays date with correct format
-            formDataObject.timeStamp = timeStamp; //append actual timeStamp for sorting
-            formDataObject.imageName = formDataObject.imageName + "." + this.imageToApi.type.match(/\w+$/); //Add image file type to imageName
+      .then(results => {
+        if (results.answer === 'yes') {
+            const apiObject = new FormData();
+            const timeStamp = Date.now();
+            // Gets date in correct format
+            const todaysDate = this.currentDate.getMonth() + 1 + '/' + this.currentDate.getDate() + '/' + this.currentDate.getFullYear();
+            const formDataObject = JSON.parse(JSON.stringify(x)); // Convert FormGroup to regular object
+            formDataObject.date = todaysDate; // Set date to todays date with correct format
+            formDataObject.timeStamp = timeStamp; // append actual timeStamp for sorting
+            // Add image file type to imageName
+            formDataObject.imageName = formDataObject.imageName + '.' + this.imageToApi.type.match(/\w+$/);
 
             apiObject.append('formInputData', JSON.stringify(formDataObject));
             apiObject.append('image', this.imageToApi);
 
             this.dbTalker.submitPhotoToDb(apiObject)
-              .then(success => {this.received = true; this.newPicCreated.emit(true);})
-              .catch(error => {this.error = true;console.log(error + ": Error submitting pic to SubmitPhotoToDb()--DbTalkerService");});
-        }else{
+              .then(() => {this.received = true; this.newPicCreated.emit(true); })
+              .catch(error => {this.error = true; console.log(error + ': Error submitting pic to SubmitPhotoToDb()--DbTalkerService'); });
+        }else {
           this.error = true;
-          console.log("Token invalid or expired");
+          console.log('Token invalid or expired');
         }
       })
-      .catch(error => {this.error = true;console.log(error + ": Error verifying token--DbTalkerService")});
+      .catch(error => {this.error = true; console.log(error + ': Error verifying token--DbTalkerService'); });
   }
 
   // excepts and reads the image file object
@@ -89,13 +90,10 @@ export class InputFormComponent implements OnInit {
     document.getElementById('uploaded').setAttribute('src', e.target.result);
   }
 
-  // Message handling
-  @ViewChild('imageform') imageForm;
-
-  clearErrorMessage(){
+  clearErrorMessage() {
     this.error = false;
   }
-  clearMessageAndForm(){
+  clearMessageAndForm() {
     this.received = false;
     this.inputForm.reset();
     this.imageForm.nativeElement.reset();
