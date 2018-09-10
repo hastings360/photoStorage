@@ -1,4 +1,3 @@
-
 import {catchError} from 'rxjs/operators';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -22,8 +21,8 @@ export class DbTalkerService {
   }
 
   // Submit dataObject to API
-  submitPhotoToDb(objectToSend: object): any {
-    return this.http.post('/api/submit-pic', objectToSend);
+  submitPhotoToDb(objectToSend: object): Promise<string> {
+    return this.http.post('/api/submit-pic', objectToSend, {responseType: 'text'}).toPromise();
   }
 
   // Submit login request

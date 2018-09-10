@@ -53,10 +53,9 @@ export class InputFormComponent implements OnInit {
             apiObject.append('formInputData', JSON.stringify(formDataObject));
             apiObject.append('image', this.imageToApi);
 
-            this.dbTalker.submitPhotoToDb(apiObject).subscribe(
-              error => {this.error = true; console.log(error + ': Error submitting pic to SubmitPhotoToDb()--DbTalkerService'); },
-              success => {console.log(success); this.received = true; this.newPicCreated.emit(true); }
-              );
+            this.dbTalker.submitPhotoToDb(apiObject)
+              .then(success => {console.log(success); this.received = true; this.newPicCreated.emit(true); })
+              .catch(error => {this.error = true; console.log(error + ': Error submitting pic to SubmitPhotoToDb()--DbTalkerService'); });
         }else {
           this.error = true;
           console.log('Token invalid or expired');
