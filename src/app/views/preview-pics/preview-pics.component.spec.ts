@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { PhotoStr } from '../../photo-str.model';
 import { PreviewPicsComponent } from './preview-pics.component';
 
 describe('PreviewPicsComponent', () => {
@@ -8,7 +8,7 @@ describe('PreviewPicsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PreviewPicsComponent ]
+      declarations: [ PreviewPicsComponent, PhotoStr ]
     })
     .compileComponents();
   }));

@@ -12,33 +12,33 @@ import { PhotoStr } from '../../photo-str.model';
 export class PreviewPicsComponent implements OnChanges {
 
   @Input() photo: PhotoStr;
-  
-  @Input() seePhoto: boolean = false;
+
+  @Input() seePhoto = false;
 
   @Output() closePreview: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   public url: SafeResourceUrl;
   public urlFull: SafeResourceUrl;
 
-  public downloadable: boolean = false;
+  public downloadable = false;
 
-  constructor(private sanitizer: DomSanitizer,private dbTalker: DbTalkerService) { }
+  constructor(private sanitizer: DomSanitizer, private dbTalker: DbTalkerService) { }
 
   ngOnChanges() {
     this.url = this.sanitizer.bypassSecurityTrustResourceUrl('https://photos.larry-hastings.com/previews/med-' + this.photo.imageName);
     this.urlFull = this.sanitizer.bypassSecurityTrustResourceUrl('https://photos.larry-hastings.com/' + this.photo.imageName);
     this.dbTalker.tokenVerify(localStorage.getItem('token'))
-      .then(results =>{
-        if(results.answer === "yes"){
+      .then(results => {
+        if (results.answer === 'yes') {
          this.downloadable = true;
-        }else{
+        }else {
           this.downloadable = false;
         }
       })
-      .catch(error => console.log(error + ": Error verifying token--DbTalkerService"));
+      .catch(error => console.log(error + ': Error verifying token--DbTalkerService'));
   }
 
-  closePrev(){
+  closePrev() {
     this.closePreview.emit(false);
   }
 }
