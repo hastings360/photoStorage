@@ -19,6 +19,7 @@ export class InputFormComponent implements OnInit {
   public imageUploaded = false;
   public imageToLarge = false;
   public imageToApi;
+  public submittingPhoto = false;
 
   @Output() newPicCreated: EventEmitter<boolean> = new EventEmitter<boolean>();
 
@@ -36,6 +37,7 @@ export class InputFormComponent implements OnInit {
   }
 
   onSubmit(x: FormGroup): void {
+    this.submittingPhoto = true;
 
     this.dbTalker.tokenVerify(localStorage.getItem('token'))
       .then(results => {
@@ -54,9 +56,11 @@ export class InputFormComponent implements OnInit {
             apiObject.append('image', this.imageToApi);
 
             this.dbTalker.submitPhotoToDb(apiObject)
-              .then(success => {console.log(success); this.received = true; this.newPicCreated.emit(true); })
-              .catch(error => {this.error = true; console.log(error + ': Error submitting pic to SubmitPhotoToDb()--DbTalkerService'); });
+              .then(success => {console.log(success); this.submittingPhoto = false; this.received = true; this.newPicCreated.emit(true); })
+              .catch(error => {this.submittingPhoto = false;
+                this.error = true; console.log(error + ': Error submitting pic to SubmitPhotoToDb()--DbTalkerService'); });
         }else {
+          this.submittingPhoto = false;
           this.error = true;
           console.log('Token invalid or expired');
         }

@@ -11,7 +11,7 @@ import { PhotoStr } from '../../photo-str.model';
 export class MiniPicsComponent implements OnInit {
 
   @Input() photo: PhotoStr;
-  
+
   @Output() previewPhoto: EventEmitter<PhotoStr> = new EventEmitter<PhotoStr>();
 
   public url: SafeResourceUrl;
@@ -22,8 +22,7 @@ export class MiniPicsComponent implements OnInit {
     this.url = this.sanitizer.bypassSecurityTrustResourceUrl('https://photos.larry-hastings.com/icons/mini-' + this.photo.imageName);
   }
 
-  sendPreview(x){
+  sendPreview(x) {
     this.previewPhoto.emit(x);
   }
-
 }

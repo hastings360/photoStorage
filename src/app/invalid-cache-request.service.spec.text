@@ -1,6 +1,6 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { CacheRequestService } from './cache-request.service';
+import { CacheRequestService } from './invalid-cache-request.service';
 
 describe('CacheRequestService', () => {
   beforeEach(() => {

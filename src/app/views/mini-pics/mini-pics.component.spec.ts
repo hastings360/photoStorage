@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { MiniPicsComponent } from './mini-pics.component';
+import { DbTalkerService } from '../../db-talker.service';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('MiniPicsComponent', () => {
   let component: MiniPicsComponent;
@@ -8,7 +9,9 @@ describe('MiniPicsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MiniPicsComponent ]
+      imports: [HttpClientModule],
+      declarations: [MiniPicsComponent],
+      providers: [DbTalkerService]
     })
     .compileComponents();
   }));

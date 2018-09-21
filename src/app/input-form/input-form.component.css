@@ -52,3 +52,6 @@ button:hover{
 #error-message{
     background-color: #ff000080;
 }
+#progress-message{
+  background: transparent;
+}

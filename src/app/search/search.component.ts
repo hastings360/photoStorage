@@ -16,14 +16,14 @@ export class SearchComponent implements OnInit {
 
   constructor(private dbTalker: DbTalkerService, private el: ElementRef) { console.log(el);}
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
     observableFromEvent(this.el.nativeElement, 'keyup').pipe(
-    map((input:any) => input.target.value),
+    map((input: any) => input.target.value),
     filter((inputData: string) => inputData.length > 0),
-    debounceTime(250),)
+    debounceTime(250), )
     .subscribe(
-      (inputData) => {this.query.emit(inputData)},
-      (error) => {console.log(error);console.log("Error coming from search.component, Not grabbing Input");}
-    )
+      (inputData) => {this.query.emit(inputData); },
+      (error) => {console.log(error); console.log('Error coming from search.component, Not grabbing Input'); }
+    );
   }
 }

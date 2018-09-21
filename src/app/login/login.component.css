@@ -46,17 +46,3 @@
     color: #f30707;
     font-size: 0.7em;
 }
-.spin{
-    animation: rotate 0.6s linear infinite;
-}
-.no-spin{
-    animation: none;
-}
-@keyframes rotate{
-    0%{
-        transform: rotateY(0deg);
-    }
-    to{
-        transform: rotateY(360deg);
-    }
-}

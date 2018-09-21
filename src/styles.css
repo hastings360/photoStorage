@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+.spin{
+  animation: rotate 0.6s linear infinite;
+}
+
+@keyframes rotate{
+  0%{
+      transform: rotateY(0deg);
+  }
+  to{
+      transform: rotateY(360deg);
+  }
+}

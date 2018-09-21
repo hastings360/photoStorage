@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SearchComponent } from './search.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DbTalkerService } from '../db-talker.service';
 
 describe('SearchComponent', () => {
   let component: SearchComponent;
@@ -8,7 +10,9 @@ describe('SearchComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SearchComponent ]
+      imports: [HttpClientModule],
+      declarations: [ SearchComponent ],
+      providers: [DbTalkerService]
     })
     .compileComponents();
   }));

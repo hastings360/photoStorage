@@ -1,0 +1,1 @@
+.spin{-webkit-animation:.6s linear infinite rotate;animation:.6s linear infinite rotate}@-webkit-keyframes rotate{0%{-webkit-transform:rotateY(0);transform:rotateY(0)}to{-webkit-transform:rotateY(360deg);transform:rotateY(360deg)}}@keyframes rotate{0%{-webkit-transform:rotateY(0);transform:rotateY(0)}to{-webkit-transform:rotateY(360deg);transform:rotateY(360deg)}}
