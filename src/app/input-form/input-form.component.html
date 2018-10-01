@@ -1,5 +1,10 @@
 <div class="row img-form-container">
 
+  <div id="img-upload-container" class="col-md-6">
+    <img class="img-fluid" id="uploaded" src="#" alt="Your image previews here">
+    <div class="error-message" *ngIf="imageToLarge">That image is too large!<br>Limit: 2 Gb</div>
+  </div>
+
   <div class="col-md-6" id="input-form">
     <form #imageform>
       <input id="image" type="file" #file (change)="updateImageFile(file.files)" accept=".jpg, .jpeg, .png, .tiff, .gif, .bmp">
@@ -40,10 +45,7 @@
     </form>
   </div>
 
-  <div id="img-upload-container" class="col-md-6">
-    <img class="img-fluid" id="uploaded" src="#" alt="Your image previews here">
-    <div class="error-message" *ngIf="imageToLarge">That image is too large!<br>Limit: 2 Gb</div>
-  </div>
+
 
   <div *ngIf="received" class="status-message">
     <p>The photo has been submitted <br>
