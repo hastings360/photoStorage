@@ -1,7 +1,12 @@
 .font-sizer{
     font-size: 1rem;
-    background: #fff url("./../assets/imgs/curacao-graffiti.jpg") center/cover no-repeat fixed;
+    background: #fff url("./../assets/imgs/curacao-graffiti.jpg") no-repeat center/cover fixed;
     padding-bottom: 4em;
+}
+@media screen and (max-width: 767px){
+  .font-sizer{
+    background-size: auto;
+  }
 }
 #login{
     position: absolute;
