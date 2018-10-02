@@ -3,7 +3,7 @@
     background: #fff url("../assets/imgs/curacao-graffiti.jpg") no-repeat center/cover fixed;
     padding-bottom: 4em;
 }
-@media screen and (max-width: 767px){
+@media screen and (max-width: 400px){
     .font-sizer{
       background-image: url("../assets/imgs/curacao-graffiti-mobile.jpg");
     }
